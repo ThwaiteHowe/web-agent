@@ -357,24 +357,63 @@
 
     </section>
 
-    <section id="booking" class="about section">
+    <!-- <section id="booking" class="about section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <span class="description-title">Booking</span>
         <h2>Booking</h2>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
             <div class="content ps-0 ps-lg-5">
-              <!-- Calendar Container -->
               <div id="calendar" class="mb-4"></div>
             </div>
           </div>
         </div>
       </div>
+    </section> -->
+
+    <section id="booking" class="about section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">Booking</span>
+        <h2>Booking</h2>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              Thwaite Howe can be booked directly with us by email sent to <a href="mailto:thwaite.howe.info@gmail.com">thwaite.howe.info@gmail.com</a>. We prefer to work directly; a short email or quick
+              call should help us to confirm the suitability of Thwaite Howe for your specific needs.  Once you and ourselves are happy and agree, we confirm, 
+              put an agreement in place and the booked dates are yours.  Thereafter, between your booking date and up to your check-in date, we will be available to answer any queries you have.
+            </p>
+            <p>
+              The maximum number of people Thwaite Howe sleeps is 22 plus babies in ten (10) bedrooms.
+              We provide two travel cots and high chairs for babies (you can bring more with you, if needed). 
+              Also, we can accommodate smaller groups down to eight (8) and the price can be adjusted accordingly.
+              Finally your pet dogs are allowed; we allow up to three (3) dogs, and please ensure you inform us. 
+            </p>
+            <p>
+              We would love to hear from you; drop us a line with your Booking interest and we will be pleased to respond to your enquiry.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="content ps-0 ps-lg-5">
+
+
+              <div class="position-relative mt-4">
+                <img src="assets/img/01_external/TH-PARKING-MJW_6047.jpg" class="img-fluid rounded-4" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </section>
 
     <section id="call-to-action" class="call-to-action section dark-background">
@@ -1227,28 +1266,8 @@
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        // events: [
-        //   {
-        //     "title": "CLOSED - Not available",
-        //     "start": "2025-06-26T17:00:00.000Z",
-        //     "end": "2025-06-28T17:00:00.000Z",
-        //     "className": "event-booking"
-        //   },
-        //   {
-        //     "title": "CLOSED - Not available",
-        //     "start": "2025-07-18T17:00:00.000Z",
-        //     "end": "2025-07-25T17:00:00.000Z",
-        //     "className": "event-airbnb"
-        //   },
-        //   {
-        //     "title": "CLOSED - Not available",
-        //     "start": "2025-08-07T17:00:00.000Z",
-        //     "end": "2025-08-09T17:00:00.000Z",
-        //     "className": "event-booking"
-        //   },
-        // ],
         events: {
-          url: 'http://localhost:3000/api/availability', // Replace with your actual API endpoint
+          url: 'https://dev.api.thwaitehowe.com/events/availability', // Replace with your actual API endpoint
           method: 'GET',
           failure: function() {
             alert('There was an error while fetching events!');
@@ -1286,7 +1305,7 @@
   </script>
 
   <!-- Add custom CSS for the calendar -->
-  <style>
+  <!-- <style>
     .fc-event {
       border-radius: 4px;
       padding: 2px 4px;
@@ -1310,7 +1329,7 @@
       border-color: #074799 !important;
       color: #ffffff !important;
     }
-  </style>
+  </style> -->
 
 </body>
 
