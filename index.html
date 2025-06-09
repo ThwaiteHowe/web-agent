@@ -53,7 +53,7 @@
           <li><a href="#contact">Map</a></li>
           <li><a href="#compliments">Compliments</a></li>
           <li><a href="#booking">Booking</a></li>
-          <li><a href="calendar.html">Availability</a></li>
+          <li><a href="availability.html">Availability</a></li>
           <li><a href="#activities">Activities</a></li>
           <li><a href="#memories">Memories</a></li>
           <li><a href="#portfolio">Gallery</a></li>
@@ -1221,6 +1221,7 @@
             <li><a href="#contact">Map</a></li>
             <li><a href="#compliments">Compliments</a></li>
             <li><a href="#booking">Booking</a></li>
+            <li><a href="availability.html">Availability</a></li>
             <li><a href="#activities">Activities</a></li>
             <li><a href="#memories">Memories</a></li>
             <li><a href="#portfolio">Gallery</a></li>
@@ -1255,7 +1256,7 @@
   <script src="assets/js/main.js"></script>
 
 
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -1265,6 +1266,10 @@
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
+        // handleWindowResize: true,
+        height: 'auto',
+        fixedWeekCount: false,
+        dayMinWidth: '5px',
         events: {
           url: 'https://dev.api.thwaitehowe.com/events/availability', // Replace with your actual API endpoint
           method: 'GET',
@@ -1301,16 +1306,16 @@
       });
       calendar.render();
     });
-  </script>
+  </script> -->
 
 
-  <style>
+  <!-- <style>
     .fc-event {
       border-radius: 4px;
       padding: 2px 4px;
     }
     .fc-event-title {
-      font-weight: 500;
+      font-weight: 400;
     }
     .fc-day-today {
       background-color: rgba(220, 53, 69, 0.1) !important;
@@ -1328,7 +1333,7 @@
       border-color: #074799 !important;
       color: #ffffff !important;
     }
-  </style>
+  </style> -->
 
 </body>
 

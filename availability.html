@@ -23,7 +23,6 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
@@ -33,20 +32,132 @@
   <!-- FullCalendar -->
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
 
+  <style>
+    .fc-event {
+      border-radius: 4px;
+      padding: 2px 4px;
+    }
+    .fc-event-title {
+      font-weight: 500;
+    }
+    .fc-day-today {
+      background-color: rgba(220, 53, 69, 0.1) !important;
+    }
+
+    /* Mobile-friendly styles */
+    @media (max-width: 768px) {
+      .fc .fc-toolbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .fc .fc-toolbar-title {
+        font-size: 1.2em !important;
+      }
+      .fc .fc-button {
+        padding: 0.3em 0.6em;
+        font-size: 0.9em;
+      }
+      .fc .fc-daygrid-day {
+        min-height: 80px;
+      }
+      .fc .fc-daygrid-day-number {
+        font-size: 0.9em;
+      }
+      .fc-event {
+        font-size: 0.8em;
+        padding: 1px 2px;
+      }
+      .fc .fc-view-harness {
+        min-height: 400px;
+      }
+    }
+
+    /* Event type styles - with higher specificity */
+    .fc .fc-event.event-airbnb {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    .fc .fc-event.event-booking {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    /* Ensure event colors work in all views */
+    .fc-dayGridMonth-view .fc-event.event-airbnb,
+    .fc-timeGridWeek-view .fc-event.event-airbnb,
+    .fc-timeGridDay-view .fc-event.event-airbnb {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    .fc-dayGridMonth-view .fc-event.event-booking,
+    .fc-timeGridWeek-view .fc-event.event-booking,
+    .fc-timeGridDay-view .fc-event.event-booking {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    /* Back to Home button styles */
+    .back-to-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #393E46;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .back-to-home:hover {
+      background-color: #7F8CAA;
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-to-home i {
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 768px) {
+      .back-to-home {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <main class="main">
-    <section id="booking" class="about section">
+  <!-- Add Back to Home button -->
+  <a href="index.html" class="back-to-home">
+    <i class="bi bi-arrow-left"></i>
+    Back to Home
+  </a>
 
-      <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Booking</span>
-        <h2>Booking</h2>
+  <main class="main" data-aos="fade-up">
+    <section id="booking" class="about section">
+      <div class="container section-title">
+        <span class="description-title">Availability</span>
+        <h2>Availability</h2>
       </div>
 
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
+          <div class="col-lg-12">
             <div class="content ps-0 ps-lg-5">
               <div id="calendar" class="mb-4"></div>
             </div>
@@ -57,7 +168,6 @@
   </main>
 
   <footer id="footer" class="footer dark-background">
-
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-6 col-md-6 footer-about">
@@ -80,14 +190,15 @@
         <div class="col-lg-6 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#hero" class="active">Welcome</a></li>
-            <li><a href="#about">Introduction</a></li>
-            <li><a href="#contact">Map</a></li>
-            <li><a href="#compliments">Compliments</a></li>
-            <li><a href="#booking">Booking</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#memories">Memories</a></li>
-            <li><a href="#portfolio">Gallery</a></li>
+            <li><a href="index.html#hero">Welcome</a></li>
+            <li><a href="index.html#about">Introduction</a></li>
+            <li><a href="index.html#contact">Map</a></li>
+            <li><a href="index.html#compliments">Compliments</a></li>
+            <li><a href="index.html#booking">Booking</a></li>
+            <li><a href="#">Availability</a></li>
+            <li><a href="index.html#activities">Activities</a></li>
+            <li><a href="index.html#memories">Memories</a></li>
+            <li><a href="index.html#portfolio">Gallery</a></li>
           </ul>
         </div>
 
@@ -103,51 +214,55 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/js/main.js"></script>
 
   <!-- FullCalendar Initialization -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
+        initialView: window.innerWidth < 768 ? 'dayGridMonth' : 'dayGridMonth',
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          right: window.innerWidth < 768 ? 'dayGridMonth' : 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        fixedWeekCount: false,
+        unselectAuto: true,
+        selectable: true,
+        height: 'auto',
+        windowResize: function(view) {
+          if (window.innerWidth < 768) {
+            calendar.setOption('headerToolbar', {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth'
+            });
+          } else {
+            calendar.setOption('headerToolbar', {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            });
+          }
         },
         events: {
-          url: 'https://api.thwaitehowe.com/events/availability', // Replace with your actual API endpoint
+          url: 'https://dev.api.thwaitehowe.com/events/availability',
           method: 'GET',
           failure: function() {
             alert('There was an error while fetching events!');
           },
-          // Optional: Transform the API response to match FullCalendar's event format
           success: function(content) {
-            // If your API returns data in a different format, transform it here
             return content.map(event => ({
               title: event.title,
               start: event.start,
               end: event.end,
               className: event.className,
-              // Add any other event properties you need
             }));
           }
         },
-        selectable: true,
-        selectMirror: true,
-        dayMaxEvents: true,
         eventDidMount: function(info) {
           info.el.title = info.event.title;
         },
@@ -155,7 +270,7 @@
           return {
             html: `<div class="fc-event-main-frame">
                     <div class="fc-event-title-container">
-                      <div class="fc-event-title">${arg.event.title}</div>
+                      <div class="fc-event-title">Booked</div>
                     </div>
                   </div>`
           };
@@ -164,32 +279,5 @@
       calendar.render();
     });
   </script>
-
-  <!-- Add custom CSS for the calendar -->
-  <style>
-    .fc-event {
-      border-radius: 4px;
-      padding: 2px 4px;
-    }
-    .fc-event-title {
-      font-weight: 500;
-    }
-    .fc-day-today {
-      background-color: rgba(220, 53, 69, 0.1) !important;
-    }
-
-    /* Event type styles */
-    .event-airbnb {
-      background-color: #dc3545 !important;
-      border-color: #dc3545 !important;
-      color: #ffffff !important;
-    }
-
-    .event-booking {
-      background-color: #074799 !important;
-      border-color: #074799 !important;
-      color: #ffffff !important;
-    }
-  </style>
 </body>
 </html>
