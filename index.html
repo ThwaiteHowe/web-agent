@@ -53,6 +53,7 @@
           <li><a href="#contact">Map</a></li>
           <li><a href="#compliments">Compliments</a></li>
           <li><a href="#booking">Booking</a></li>
+          <li><a href="availability.html">Availability</a></li>
           <li><a href="#activities">Activities</a></li>
           <li><a href="#memories">Memories</a></li>
           <li><a href="#portfolio">Gallery</a></li>
@@ -357,24 +358,6 @@
 
     </section>
 
-    <!-- <section id="booking" class="about section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Booking</span>
-        <h2>Booking</h2>
-      </div>
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
-            <div class="content ps-0 ps-lg-5">
-              <div id="calendar" class="mb-4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <section id="booking" class="about section">
 
       <div class="container section-title" data-aos="fade-up">
@@ -392,7 +375,7 @@
               put an agreement in place and the booked dates are yours.  Thereafter, between your booking date and up to your check-in date, we will be available to answer any queries you have.
             </p>
             <p>
-              The maximum number of people Thwaite Howe sleeps is 22 plus babies in ten (10) bedrooms.
+              The maximum number of people Thwaite Howe sleeps is 24 plus babies in ten (10) bedrooms.
               We provide two travel cots and high chairs for babies (you can bring more with you, if needed). 
               Also, we can accommodate smaller groups down to eight (8) and the price can be adjusted accordingly.
               Finally your pet dogs are allowed; we allow up to three (3) dogs, and please ensure you inform us. 
@@ -1222,6 +1205,7 @@
             <li><a href="#contact">Map</a></li>
             <li><a href="#compliments">Compliments</a></li>
             <li><a href="#booking">Booking</a></li>
+            <li><a href="availability.html">Availability</a></li>
             <li><a href="#activities">Activities</a></li>
             <li><a href="#memories">Memories</a></li>
             <li><a href="#portfolio">Gallery</a></li>
@@ -1255,8 +1239,8 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- FullCalendar Initialization -->
-  <script>
+
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -1266,6 +1250,10 @@
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
+        // handleWindowResize: true,
+        height: 'auto',
+        fixedWeekCount: false,
+        dayMinWidth: '5px',
         events: {
           url: 'https://dev.api.thwaitehowe.com/events/availability', // Replace with your actual API endpoint
           method: 'GET',
@@ -1302,16 +1290,16 @@
       });
       calendar.render();
     });
-  </script>
+  </script> -->
 
-  <!-- Add custom CSS for the calendar -->
+
   <!-- <style>
     .fc-event {
       border-radius: 4px;
       padding: 2px 4px;
     }
     .fc-event-title {
-      font-weight: 500;
+      font-weight: 400;
     }
     .fc-day-today {
       background-color: rgba(220, 53, 69, 0.1) !important;

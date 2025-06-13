@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Thwaite Howe</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Favicons -->
+  <link href="assets/img/home.png" rel="icon">
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- FullCalendar -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+
+  <style>
+    .fc-event {
+      border-radius: 4px;
+      padding: 2px 4px;
+    }
+    .fc-event-title {
+      font-weight: 500;
+    }
+    .fc-day-today {
+      background-color: rgba(220, 53, 69, 0.1) !important;
+    }
+
+    /* Mobile-friendly styles */
+    @media (max-width: 768px) {
+      .fc .fc-toolbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .fc .fc-toolbar-title {
+        font-size: 1.2em !important;
+      }
+      .fc .fc-button {
+        padding: 0.3em 0.6em;
+        font-size: 0.9em;
+      }
+      .fc .fc-daygrid-day {
+        min-height: 80px;
+      }
+      .fc .fc-daygrid-day-number {
+        font-size: 0.9em;
+      }
+      .fc-event {
+        font-size: 0.8em;
+        padding: 1px 2px;
+      }
+      .fc .fc-view-harness {
+        min-height: 400px;
+      }
+    }
+
+    /* Event type styles - with higher specificity */
+    .fc .fc-event.event-airbnb {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    .fc .fc-event.event-booking {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    /* Ensure event colors work in all views */
+    .fc-dayGridMonth-view .fc-event.event-airbnb,
+    .fc-timeGridWeek-view .fc-event.event-airbnb,
+    .fc-timeGridDay-view .fc-event.event-airbnb {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    .fc-dayGridMonth-view .fc-event.event-booking,
+    .fc-timeGridWeek-view .fc-event.event-booking,
+    .fc-timeGridDay-view .fc-event.event-booking {
+      background-color: #626F47 !important;
+      border-color: #626F47 !important;
+      color: #ffffff !important;
+    }
+
+    /* Back to Home button styles */
+    .back-to-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #393E46;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .back-to-home:hover {
+      background-color: #7F8CAA;
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-to-home i {
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 768px) {
+      .back-to-home {
+        top: 10px;
+        left: 10px;
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Add Back to Home button -->
+  <a href="index.html" class="back-to-home">
+    <i class="bi bi-arrow-left"></i>
+    Back to Home
+  </a>
+
+  <main class="main" data-aos="fade-up">
+    <section id="booking" class="about section">
+      <div class="container section-title">
+        <span class="description-title">Availability</span>
+        <h2>Availability</h2>
+        <p class="text-muted mt-2">Please note the following calendar indicating availability. If you wish to enquire regarding a booking, please send us a message at email address 
+          <a href="mailto:thwaite.howe.info@gmail.com">thwaitehowe.howe.info@gmail.com</a>. We will promptly reply to your enquiry
+        </p>
+        <p class="text-muted mt-2">Thank you.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-12">
+            <div class="content ps-0 ps-lg-5">
+              <div id="calendar" class="mb-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Thwaite Howe</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Thornthwaite</p>
+            <p>Keswick</p>
+            <p>CA12 5SA, United Kingdom</p>
+            <!-- <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p> -->
+            <p><strong>Email:</strong> <span>thwaite.howe.info@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.facebook.com/profile.php?id=61557889719430" target="_blank" ><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/thwaitehowe/" target="_blank"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html#hero">Welcome</a></li>
+            <li><a href="index.html#about">Introduction</a></li>
+            <li><a href="index.html#contact">Map</a></li>
+            <li><a href="index.html#compliments">Compliments</a></li>
+            <li><a href="index.html#booking">Booking</a></li>
+            <li><a href="#">Availability</a></li>
+            <li><a href="index.html#activities">Activities</a></li>
+            <li><a href="index.html#memories">Memories</a></li>
+            <li><a href="index.html#portfolio">Gallery</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Thwaite Howe</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- FullCalendar Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: window.innerWidth < 768 ? 'dayGridMonth' : 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: window.innerWidth < 768 ? 'dayGridMonth' : 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        fixedWeekCount: false,
+        unselectAuto: true,
+        selectable: true,
+        height: 'auto',
+        windowResize: function(view) {
+          if (window.innerWidth < 768) {
+            calendar.setOption('headerToolbar', {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth'
+            });
+          } else {
+            calendar.setOption('headerToolbar', {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            });
+          }
+        },
+        events: {
+          url: 'https://dev.api.thwaitehowe.com/events/availability',
+          method: 'GET',
+          failure: function() {
+            alert('There was an error while fetching events!');
+          },
+          success: function(content) {
+            return content.map(event => ({
+              title: event.title,
+              start: event.start,
+              end: event.end,
+              className: event.className,
+            }));
+          }
+        },
+        eventDidMount: function(info) {
+          info.el.title = info.event.title;
+        },
+        eventContent: function(arg) {
+          return {
+            html: `<div class="fc-event-main-frame">
+                    <div class="fc-event-title-container">
+                      <div class="fc-event-title">Booked</div>
+                    </div>
+                  </div>`
+          };
+        }
+      });
+      calendar.render();
+    });
+  </script>
+</body>
+</html>
