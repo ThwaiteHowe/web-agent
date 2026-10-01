@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Thwaite Howe | Permanently Closed</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/home.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Raleway:wght@300;600;700&display=swap" rel="stylesheet">
+
+  <!-- Kept self-contained so the page still renders when the rest of the site is unavailable -->
+  <style>
+    :root {
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --heading-font: "Raleway", sans-serif;
+      --accent-color: #AED2FF;
+      --contrast-color: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: var(--default-font);
+      color: var(--contrast-color);
+      background: #060606 url("assets/img/01_external/TH-DRIVE-MJW_6020-HDR.jpg") center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 6, 6, 0.6);
+      z-index: 0;
+    }
+
+    .maintenance {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .sitename {
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 40px;
+      color: var(--accent-color);
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      color: var(--accent-color);
+    }
+
+    h2 {
+      font-family: var(--heading-font);
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 1.2;
+      margin: 0 0 20px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.7;
+      margin: 0 0 16px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .btn-contact {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 36px;
+      border: 2px solid var(--accent-color);
+      border-radius: 50px;
+      color: var(--contrast-color);
+      font-family: var(--heading-font);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-contact:hover,
+    .btn-contact:focus-visible {
+      background: var(--accent-color);
+      color: #060606;
+    }
+
+    .signoff {
+      margin-top: 40px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="maintenance">
+    <h1 class="sitename">Thwaite Howe</h1>
+
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 10.5 12 3l9 7.5" />
+      <path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9" />
+      <path d="M10 21v-6h4v6" />
+    </svg>
+
+    <h2>Thwaite Howe is now closed</h2>
+    <p>The house has closed permanently and bookings are no longer available.</p>
+    <p>Thank you to everyone who has stayed with us over the years &mdash; it has been a pleasure to share our family home with you.</p>
+    <p>If you have any questions, please get in touch by email.</p>
+
+    <a class="btn-contact" href="mailto:thwaite.howe.info@gmail.com">Contact Us</a>
+
+    <p class="signoff">&mdash; The Thwaite Howe Team</p>
+  </main>
+
+</body>
+
+</html>
